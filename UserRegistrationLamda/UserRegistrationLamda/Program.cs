@@ -16,6 +16,15 @@ namespace UserRegistrationLamda
             bool checkFirstName = validation.FirstNameValidation(fName);
             if (!checkFirstName)//If not valid then ask user to enter first name again
                 goto Firstname;
+
+            // User Last name validation
+            Lastname:
+            Console.WriteLine("\nNote : Your Last name should start with Capital Letter only and has minimum 3 Character and no space between letters");
+            Console.WriteLine("\n\nEnter your last name : ");
+            string lName = Console.ReadLine();
+            bool checkLastName = validation.LastNameValidation(lName);
+            if (!checkLastName)
+                goto Lastname;
         }
     }
 }

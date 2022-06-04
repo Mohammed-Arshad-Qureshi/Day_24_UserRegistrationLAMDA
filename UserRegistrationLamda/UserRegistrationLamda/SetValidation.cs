@@ -23,5 +23,21 @@ namespace UserRegistrationLamda
                 return false;
             }
         }
+
+        public bool LastNameValidation(string lName)
+        {
+            string pattern = "^[A-Z][a-z]{2,}$"; // Regex for last name validation
+            if (Regex.IsMatch(lName, pattern))
+            {
+                Console.WriteLine($"\nYour last name \"{lName}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour last name \"{lName}\" is not valid");
+                Console.WriteLine("\nPlease follow naming convention of last name");
+                return false;
+            }
+        }
     }
 }
