@@ -54,5 +54,20 @@ namespace UserRegistrationLamda
                 return false;
             }
         }
+
+        public bool MobileNumberValidation(string mobileNo)
+        {
+            string pattern = "^[9][1][ ][6-9][0-9]{9}$"; // Regex for Mobile number validation
+            if (Regex.IsMatch(mobileNo, pattern))
+            {
+                Console.WriteLine($"\nYour Mobile Number \"{mobileNo}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour Mobile Number \"{mobileNo}\" is not valid");
+                return false;
+            }
+        }
     }
 }

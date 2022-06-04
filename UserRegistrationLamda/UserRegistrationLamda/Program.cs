@@ -34,6 +34,14 @@ namespace UserRegistrationLamda
             bool checkEmail = validation.EmailValidation(email);
             if (!checkEmail)
                 goto Email;
+
+            //user Mobile Number validation
+            MobileNumber:
+            Console.WriteLine("\n\nEnter your Mobile Number : ");
+            string mNo = Console.ReadLine();
+            bool checkMobileNo = validation.MobileNumberValidation(mNo);
+            if (!checkMobileNo)
+                goto MobileNumber;
         }
     }
 }
