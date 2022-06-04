@@ -47,11 +47,13 @@ namespace UserRegistrationLamda
             Password:
             Console.WriteLine("\nPassword Rules");
             Console.WriteLine("Rule 1 : Minimum 8 Character");
+            Console.WriteLine("Rule 2 : Atleast one Uppercase letter");
             Console.WriteLine("\n\nEnter your Password : ");
             string password = Console.ReadLine();
-            bool checkPassword = validation.PasswordValidation(password);
+            bool checkPassword = validation.PasswordRule2Validation(password);
             if (!checkPassword)
                 goto Password;
+
         }
     }
 }
