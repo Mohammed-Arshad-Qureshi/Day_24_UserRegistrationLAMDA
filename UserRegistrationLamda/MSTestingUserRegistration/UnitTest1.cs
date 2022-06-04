@@ -9,11 +9,11 @@ namespace MSTestingUserRegistration
 
         [TestMethod]
         //Checking for multiple first name
-        [DataRow("Praful", true)]
-        [DataRow("pr", false)]
-        [DataRow("praful", false)]
-        [DataRow("Pr", false)]
-        [DataRow("Pra", true)]
+        [DataRow("Arshad", true)]
+        [DataRow("Ar", false)]
+        [DataRow("arshad", false)]
+        [DataRow("ar", false)]
+        [DataRow("Ars", true)]
         public void GivenFirstNameValidation(string firstName, bool expected) // Testing for Firstname Validation
         {
             //Arrange
