@@ -50,7 +50,7 @@ namespace UserRegistrationLamda
             Console.WriteLine("Rule 2 : Atleast one Uppercase letter");
             Console.WriteLine("\n\nEnter your Password : ");
             string password = Console.ReadLine();
-            bool checkPassword = validation.PasswordRule3Validation(password);
+            bool checkPassword = validation.PasswordRule4Validation(password);
             if (!checkPassword)
                 goto Password;
 

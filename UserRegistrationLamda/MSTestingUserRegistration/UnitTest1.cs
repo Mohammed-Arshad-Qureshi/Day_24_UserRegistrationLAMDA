@@ -127,5 +127,22 @@ namespace MSTestingUserRegistration
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        //Checking for multiple password samples
+        [DataRow("dfgDnjvbn", false)]
+        [DataRow("A5sdf@df", true)]
+        [DataRow("F5G@f", false)]
+        [DataRow("85ADcv*gj5", true)]
+        [DataRow("&&d", false)]
+        [DataRow("885@dfvvvb", false)]
+        [DataRow("AAaa#8ghbb", true)]
+        public void PasswordRule4Validation(string password, bool expected) // Testing for Password Rule - 4 along with all rules Validation
+        {
+            //Act
+            bool actual = validation.PasswordRule4Validation(password);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

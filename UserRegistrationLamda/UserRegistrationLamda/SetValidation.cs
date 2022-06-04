@@ -119,5 +119,21 @@ namespace UserRegistrationLamda
                 return false;
             }
         }
+
+        public bool PasswordRule4Validation(string password)
+        {
+            //Rule - 4  Has Exactly one special character
+            string finalPatternPassword = @"^(?=.{8,}$)(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9]{0,}?[@~!#$%^&*+=\/-]{1}[a-zA-Z0-9]{0,}$"; // Regex for password validation rule 4
+            if (Regex.IsMatch(password, finalPatternPassword))
+            {
+                Console.WriteLine($"\nYour password \"{password}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour password \"{password}\" is not follow password rules");
+                return false;
+            }
+        }
     }
 }
