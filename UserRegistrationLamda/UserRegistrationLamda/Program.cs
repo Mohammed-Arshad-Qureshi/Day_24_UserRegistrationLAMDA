@@ -43,14 +43,14 @@ namespace UserRegistrationLamda
             if (!checkMobileNo)
                 goto MobileNumber;
 
-            //User Password validation
+            //user Password validation
             Password:
             Console.WriteLine("\nPassword Rules");
             Console.WriteLine("Rule 1 : Minimum 8 Character");
             Console.WriteLine("Rule 2 : Atleast one Uppercase letter");
             Console.WriteLine("\n\nEnter your Password : ");
             string password = Console.ReadLine();
-            bool checkPassword = validation.PasswordRule2Validation(password);
+            bool checkPassword = validation.PasswordRule3Validation(password);
             if (!checkPassword)
                 goto Password;
 
