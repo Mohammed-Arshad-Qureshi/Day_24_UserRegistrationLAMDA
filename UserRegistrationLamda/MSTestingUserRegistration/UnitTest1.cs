@@ -6,16 +6,13 @@ namespace MSTestingUserRegistration
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public class UserValidation
-        {
             [TestMethod]
             //Checking for multiple first name
-            [DataRow("Praful", true)]
-            [DataRow("pr", false)]
-            [DataRow("praful", false)]
-            [DataRow("Pr", false)]
-            [DataRow("Pra", true)]
+            [DataRow("Arshad", true)]
+            [DataRow("ar", false)]
+            [DataRow("arshad", false)]
+            [DataRow("Ar", false)]
+            [DataRow("Ars", true)]
             public void GivenFirstNameValidation(string firstName, bool expected) // Testing for Firstname Validation
             {
                 //Arrange
