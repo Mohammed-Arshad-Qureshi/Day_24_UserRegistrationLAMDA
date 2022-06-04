@@ -69,5 +69,21 @@ namespace UserRegistrationLamda
                 return false;
             }
         }
+
+        public bool PasswordValidation(string password)
+        {
+            //Rule -1 Minimum 8 characters
+            string patternForRule1 = "^[0-9a-zA-Z@#$%^&*!+=]{8,}";
+            if (Regex.IsMatch(password, patternForRule1))
+            {
+                Console.WriteLine($"\nYour password \"{password}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour password \"{password}\" is not follow password rules");
+                return false;
+            }
+        }
     }
 }
