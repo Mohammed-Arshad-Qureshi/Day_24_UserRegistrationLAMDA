@@ -39,5 +39,20 @@ namespace UserRegistrationLamda
                 return false;
             }
         }
+
+        public bool EmailValidation(string email)
+        {
+            string pattern = "^[0-9a-zA-Z]+[./+_-]{0,1}[0-9a-zA-Z]+[@][a-zA-Z0-9-]+[.][a-zA-Z]{2,}([.][a-zA-Z]{2,}){0,1}$"; // Regex for Email validation
+            if (Regex.IsMatch(email, pattern))
+            {
+                Console.WriteLine($"\nYour Email address \"{email}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour Email address \"{email}\" is not valid");
+                return false;
+            }
+        }
     }
 }

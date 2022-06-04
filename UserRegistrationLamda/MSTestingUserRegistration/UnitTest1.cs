@@ -7,25 +7,32 @@ namespace MSTestingUserRegistration
     public class UnitTest1
     {
 
-        [TestMethod]
-        //Checking for multiple first name
-        [DataRow("Praful", true)]
-        [DataRow("pr", false)]
-        [DataRow("praful", false)]
-        [DataRow("Pr", false)]
-        [DataRow("Pra", true)]
-        public void GivenFirstNameValidation(string firstName, bool expected) // Testing for Firstname Validation
+        SetValidation validation;
+        [TestInitialize]
+        public void SetUp()
         {
-            //Arrange
-            SetValidation validation = new SetValidation();
-            //Act
-            bool actual = validation.FirstNameValidation(firstName);
-            //Assert
-            Assert.AreEqual(expected, actual);
+            validation = new SetValidation();
         }
-
-
-
+        [TestClass]
+        public class UserValidation
+        {
+            [TestMethod]
+            //Checking for multiple first name
+            [DataRow("Arshad", true)]
+            [DataRow("Ar", false)]
+            [DataRow("arshad", false)]
+            [DataRow("ar", false)]
+            [DataRow("Ars", true)]
+            public void GivenFirstNameValidation(string firstName, bool expected) // Testing for Firstname Validation
+            {
+                //Arrange
+                SetValidation validation = new SetValidation();
+                //Act
+                bool actual = validation.FirstNameValidation(firstName);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+        }
         [TestMethod]
         //Checking for multiple last name
         [DataRow("Rakhade", true)]
@@ -44,5 +51,18 @@ namespace MSTestingUserRegistration
 
         }
 
+        [TestMethod]
+        //Checking for multiple email samples
+        [DataRow("abc123@.com", false)]
+        [DataRow("abc@abc@gmail.com", false)]
+        [DataRow("abc+100@gmail.com", true)]
+        [DataRow("abc@1.com", true)]
+        public void GivenEmailValidation(string email, bool expected) // Testing for Email Validation
+        {
+            //Act
+            bool actual = validation.EmailValidation(email);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

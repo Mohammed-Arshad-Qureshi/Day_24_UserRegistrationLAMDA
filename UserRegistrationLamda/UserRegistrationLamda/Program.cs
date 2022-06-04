@@ -25,6 +25,15 @@ namespace UserRegistrationLamda
             bool checkLastName = validation.LastNameValidation(lName);
             if (!checkLastName)
                 goto Lastname;
+
+
+            // User Email Validation
+            Email:
+            Console.WriteLine("\n\nEnter your email name : ");
+            string email = Console.ReadLine();
+            bool checkEmail = validation.EmailValidation(email);
+            if (!checkEmail)
+                goto Email;
         }
     }
 }
